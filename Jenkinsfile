@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'python --version'
+                def ret =  sh('echo 'Hello' > test_file', returnStdout: true)
+                println ret
             }
         }
     }
