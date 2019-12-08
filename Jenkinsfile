@@ -4,7 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                     def ret =  sh("""echo 'Hello' > test_file""", returnStdout: true)
+                     def ret =  sh (
+                         script: """echo 'Hello'""",
+                         returnStdout: true)
                      println ret
                 }
             }
